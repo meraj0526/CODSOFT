@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic Tac Glow</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+<!-- 🌸 BACKGROUND -->
+<div class="bg">
+  <div class="blob pink"></div>
+  <div class="blob blue"></div>
+  <div class="emoji-layer"></div>
+</div>
+
+<h1>✨ Tic Tac Glow 💖</h1>
+<p>Made with 💕 by Meraj Fathima</p>
+
+<div class="mode-select">
+  <button onclick="btnClick(this, aiBtnSound); setMode('ai')">🤖 AI Mode</button>
+  <button onclick="btnClick(this, pvpBtnSound); setMode('pvp')">👯 2 Player</button>
+</div>
+
+<div class="board">
+  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+</div>
+
+<h2 id="status">Choose a mode 🎮</h2>
+
+<button onclick="btnClick(this, restartSound); restartGame()">🔄 Restart</button>
+
+<div id="popup" class="popup"></div>
+
+<!-- 🔊 SOUNDS -->
+<audio id="moveSound" src="https://assets.mixkit.co/active_storage/sfx/1113/1113-preview.mp3"></audio>
+<audio id="winSound" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
+<audio id="aiWinSound" src="https://assets.mixkit.co/active_storage/sfx/276/276-preview.mp3"></audio>
+<audio id="drawSound" src="https://assets.mixkit.co/active_storage/sfx/2570/2570-preview.mp3"></audio>
+
+<audio id="aiBtnSound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+<audio id="pvpBtnSound" src="https://assets.mixkit.co/active_storage/sfx/270/270-preview.mp3"></audio>
+<audio id="restartSound" src="https://assets.mixkit.co/active_storage/sfx/1124/1124-preview.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

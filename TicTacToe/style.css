@@ -1,0 +1,180 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background: linear-gradient(135deg, #fbcfe8, #ddd6fe, #bae6fd);
+}
+
+/* 🌸 BACKGROUND */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* BLOBS */
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: float 8s infinite alternate ease-in-out;
+}
+
+.pink {
+  background: rgba(255, 105, 180, 0.4);
+  top: 10%;
+  left: 10%;
+}
+
+.blue {
+  background: rgba(135, 206, 250, 0.4);
+  bottom: 10%;
+  right: 10%;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-80px); }
+}
+
+/* 🌸 FLOATING EMOJIS */
+.emoji-layer span {
+  position: absolute;
+  opacity: 0.3;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* ✨ TITLE */
+h1 {
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+
+/* 💖 CREDIT */
+p {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* 🎮 MODE BUTTONS */
+.mode-select {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* 🔘 BUTTON */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  background: hotpink;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+/* 💥 BUTTON POP */
+button.pop {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* 🎮 BOARD */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  width: min(90vw, 340px);
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px; /* ⭐ FIX: space below board */
+}
+
+/* 🔲 CELLS */
+.cell {
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+/* HOVER EFFECT */
+.cell:hover {
+  transform: scale(1.05);
+}
+
+/* WIN CELLS */
+.cell.win {
+  background: #90ee90;
+}
+
+/* 🏆 STATUS TEXT */
+#status {
+  margin-top: 18px;   /* ⭐ FIX: pushes away from board */
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* 🎉 POPUP */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+
+  transition: 0.3s;
+}
+
+.popup.show {
+  transform: translate(-50%, -50%) scale(1);
+}
