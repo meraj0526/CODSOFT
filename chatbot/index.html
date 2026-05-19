@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura - Smart Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated Background Shapes -->
+    <div class="parallax-layer parallax-1"><div class="bg-shape shape1"></div></div>
+    <div class="parallax-layer parallax-2"><div class="bg-shape shape2"></div></div>
+    <div class="parallax-layer parallax-3"><div class="bg-shape shape3"></div></div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon pulse"></div>
+            <span>AuraBot</span>
+        </div>
+        <div class="nav-controls">
+            <button class="nav-btn ripple" id="btn-about">About</button>
+            <button class="nav-btn ripple" id="btn-help">Help</button>
+            <button class="nav-btn ripple" id="btn-contact">Contact</button>
+            <button class="nav-icon-btn ripple" id="sound-toggle" title="Toggle Sound">
+                🔊
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Chat Container -->
+    <main class="chat-wrapper">
+        <div class="chat-container glassmorphism">
+            
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar float">🤖</div>
+                    <div class="bot-details">
+                        <h2>Aura</h2>
+                        <span class="status">Online</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn ripple" id="btn-clear" title="Clear Chat">🗑️</button>
+                </div>
+            </header>
+
+            <!-- Chat Messages Area -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be injected here via JS -->
+                <div class="message bot slide-up">
+                    <div class="bubble">Hello! 😊 How can I help you today?</div>
+                </div>
+            </div>
+
+            <!-- Quick Replies Area -->
+            <div class="quick-replies" id="quick-replies">
+                <button class="quick-reply-btn ripple">What time is it?</button>
+                <button class="quick-reply-btn ripple">Tell me a joke</button>
+                <button class="quick-reply-btn ripple">Who made you?</button>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-area">
+                <div class="emoji-wrapper">
+                    <button class="icon-btn ripple" id="btn-emoji" title="Emojis">😊</button>
+                    <div class="emoji-picker glassmorphism" id="emoji-picker">
+                        <div class="emoji-grid">
+                            <span>😀</span><span>😂</span><span>🤣</span><span>😊</span><span>😍</span>
+                            <span>🤔</span><span>😎</span><span>😭</span><span>😡</span><span>👍</span>
+                            <span>👎</span><span>👋</span><span>✨</span><span>🔥</span><span>💻</span>
+                            <span>🎉</span><span>❤️</span><span>💯</span><span>🚀</span><span>🤖</span>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="text" id="chat-input" placeholder="Type a message or prompt..." autocomplete="off">
+                <button class="send-btn ripple bounce-click" id="btn-send">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+            
+            <!-- Branding Footer -->
+            <div class="chat-footer">
+                Made by Meraj Fathima 💻✨
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="modal-about">
+        <div class="modal-content glassmorphism scale-up">
+            <button class="close-btn ripple" data-close="modal-about">✕</button>
+            <h3>About Aura</h3>
+            <p>Aura is an advanced, rule-based chatbot designed with a beautiful glassmorphism interface. I use regex pattern matching to understand your intents!</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-help">
+        <div class="modal-content glassmorphism scale-up">
+            <button class="close-btn ripple" data-close="modal-help">✕</button>
+            <h3>Help & Commands</h3>
+            <ul class="modal-list">
+                <li>Type <b>"time"</b> or <b>"date"</b> to get current info.</li>
+                <li>Try simple math like <b>"5 + 5"</b>.</li>
+                <li>Express sentiments like <b>"I am happy"</b> or <b>"I feel sad"</b>.</li>
+                <li>Ask <b>"Who made you?"</b> to learn about my creator.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-contact">
+        <div class="modal-content glassmorphism scale-up">
+            <button class="close-btn ripple" data-close="modal-contact">✕</button>
+            <h3>Contact Creator</h3>
+            <p style="margin-bottom: 15px;">Have feedback or ideas? Send a message below!</p>
+            <div class="contact-form" id="contact-form">
+                <input type="text" id="contact-name" class="contact-input" placeholder="Your Name (Optional)">
+                <textarea id="contact-message" class="contact-textarea" placeholder="Type your message here..." rows="4" required></textarea>
+                <button class="primary-btn ripple" id="btn-submit-contact" style="margin-top: 10px; width: 100%;">Send a Message</button>
+            </div>
+            <p id="contact-success" style="display: none; color: #2ecc71; margin-top: 15px; font-weight: bold;">Message sent successfully! ✨</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

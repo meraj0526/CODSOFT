@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recommendation Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fa-solid fa-brain glow-icon"></i>
+            <span>NexusAI</span>
+        </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Input Section -->
+        <section class="input-section glass-panel">
+            <h1 class="main-title">Discover Something <span class="gradient-text">Amazing</span></h1>
+            <p class="subtitle">Movies, Books, Gadgets, or Jokes — just ask.</p>
+            
+            <div class="input-wrapper">
+                <input type="text" id="user-input" class="search-input" placeholder="What would you like recommendations for?" autocomplete="off">
+                <div class="input-glow"></div>
+                <button id="search-btn" class="primary-btn">
+                    <span class="btn-text">Generate</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <div class="btn-ripple"></div>
+                </button>
+            </div>
+            <div class="quick-chips">
+                <button class="chip">Action Movies</button>
+                <button class="chip">Sci-Fi Books</button>
+                <button class="chip">Tech Gadgets</button>
+                <button class="chip">Tell me a joke</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-container" class="results-grid hidden">
+            <!-- Cards will be injected here via JS -->
+        </section>
+        
+        <div id="loading-spinner" class="spinner-container hidden">
+            <div class="spinner"></div>
+            <p>AI is thinking...</p>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay"></div>
+    
+    <!-- Welcome Modal -->
+    <div id="welcome-modal" class="modal glass-panel">
+        <div class="modal-icon"><i class="fa-solid fa-robot"></i></div>
+        <h2>Welcome to NexusAI</h2>
+        <p>I am your personal AI Recommendation Assistant. I can suggest movies, books, products, or even tell jokes!</p>
+        <button id="start-btn" class="primary-btn full-width">Let's Go <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <!-- Toast Notification (Success/Error) -->
+    <div id="toast" class="toast">
+        <i id="toast-icon" class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">Success!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
